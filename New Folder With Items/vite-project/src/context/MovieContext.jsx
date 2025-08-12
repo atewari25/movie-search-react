@@ -6,6 +6,7 @@ export const useMovieContext = () => useContext(MovieContext)
 
 export const MovieProvider = ({children}) => {
     const [favorites,setFavorites] = useState([]);
+    const [movieDetail,setMovieDetail] = useState([]);
 
     useEffect(()=>{
         const storedFavs = localStorage.getItem("favorites");
@@ -33,7 +34,9 @@ export const MovieProvider = ({children}) => {
         favorites,
         addToFavorites,
         removeFromFavorties,
-        isFavorties
+        isFavorties,
+        setMovieDetail,
+        movieDetail
     }
 
     return <MovieContext.Provider value={value}>

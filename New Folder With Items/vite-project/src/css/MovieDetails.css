@@ -1,0 +1,195 @@
+
+.movie-card-detail {
+    display: flex;           /* Makes children align horizontally */
+    gap: 2rem;              /* Space between child elements */
+    padding: 2rem;          /* Space inside the container */
+    margin: 0 auto;         /* Centers the container */
+    max-width: 1000px;      /* Maximum width */
+    background-color: #1a1a1a; /* Dark background */
+    border-radius: 12px;    /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Shadow effect */
+}
+
+.movie-card-detail:hover {
+  transform: translateY(-5px);
+}
+
+.movie-poster-detail {
+  position: relative;
+  aspect-ratio: 2/3;
+  width: 100%;
+}
+
+.movie-card-detail img {
+    width: 300px;           /* Fixed width */
+    height: auto;           /* Maintains aspect ratio */
+    border-radius: 8px;     /* Rounded corners */
+    transition: transform 0.3s; /* Smooth animation */
+}
+
+.movie-poster-detail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Hover effect on image */
+.movie-card-detail img:hover {
+    transform: scale(1.05); /* Slightly enlarges on hover */
+}
+
+.movie-overlay-detail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.8)
+  );
+  opacity: 0;
+  transition: opacity 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+.movie-card-detail:hover .movie-overlay-detail {
+  opacity: 1;
+}
+
+.favorite-btn-detail {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: white;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.favorite-btn-detail:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.favorite-btn-detail.active {
+  color: #ff4757;
+}
+
+.rating-select-detail {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.movie-info-detail {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.movie-info-detail {
+    flex: 1;               /* Takes remaining space */
+    display: flex;         /* Flexbox for vertical alignment */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center content vertically */
+    gap: 1rem;             /* Space between elements */
+}
+
+.movie-info-detail h3 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.movie-info-detail h3 {
+    font-size: 2.5rem;     /* Large text */
+    color: #ffffff;        /* White text */
+    margin: 0;             /* Remove default margin */
+    font-weight: bold;     /* Bold text */
+}
+
+.movie-info-detail p {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.movie-info-detail p {
+    font-size: 1.2rem;     /* Medium text size */
+    color: #cccccc;        /* Light gray text */
+    margin: 0;             /* Remove default margin */
+}
+
+/* No movie selected message */
+.no-movie-selected {
+    text-align: center;    /* Center text */
+    padding: 3rem;         /* Large padding */
+    background-color: rgba(255,255,255,0.1); /* Semi-transparent background */
+    border-radius: 8px;    /* Rounded corners */
+    margin: 2rem auto;     /* Center with margin */
+    max-width: 500px;      /* Limit width */
+}
+
+.no-movie-selected h2 {
+    color: #e50914;        /* Netflix red color */
+    margin-bottom: 1rem;   /* Space below heading */
+}
+
+.no-movie-selected p {
+    color: #999;           /* Gray text */
+    font-size: 1.1rem;     /* Slightly larger text */
+}
+
+.user-rating-detail {
+  color: #ffd700;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  .movie-card-detail {
+    font-size: 0.9rem;
+  }
+
+  .movie-info-detail {
+    padding: 0.75rem;
+  }
+
+  .favorite-btn-detail {
+    width: 32px;
+    height: 32px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+    .movie-card-detail {
+        flex-direction: column; /* Stack vertically on mobile */
+        text-align: center;     /* Center content */
+        padding: 1rem;          /* Less padding */
+    }
+    
+    .movie-card-detail img {
+        width: 100%;           /* Full width on mobile */
+        max-width: 300px;      /* But not larger than 300px */
+    }
+    
+    .movie-info-detail h3 {
+        font-size: 2rem;       /* Smaller title on mobile */
+    }
+}
